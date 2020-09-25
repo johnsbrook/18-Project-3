@@ -1,4 +1,3 @@
-// Exporting workouts.js
 module.exports = {
-    Workout: require('./products')
-}
+  Coffeeshop: require("./products.js"),
+  };
