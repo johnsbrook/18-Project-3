@@ -33,7 +33,7 @@ app.get('/', function (req, res) {
 
 app.get('/api/products', function (req, res) {
     db.find({})
-    .sort({category: -1})
+    .sort({category: 1})
     .then(cb => {
         res.json(cb);
     })
