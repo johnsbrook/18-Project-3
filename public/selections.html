@@ -1,0 +1,76 @@
+!<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<title>Selection</title>
+</head>
+<body>
+
+    <h1>Selections Page</h1>
+    <ul class="coffee"></ul>
+
+    <div class="promo"></div>
+
+    <div class="tea"></div>
+
+    <div class="breakfast"></div>
+
+    <div class="pastry"></div>
+
+    <div class="sandwiches"></div>
+
+    <div class="sides"></div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    const createNode = (elem) => {
+        return document.createElement(elem);
+        
+    };
+    const appendNode = (parent, elem) => {
+        console.log(elem)
+        parent.appendChild(elem);
+    };
+    
+    const ul = document.querySelector('.coffee');
+    const url = 'https://coffeeproducts.herokuapp.com/api/products';
+    fetch(url)
+        .then(res => res.json(url))
+        .then(data => {
+            data.map((coffee) => {
+                let li = createNode('li'),
+                    h2 = createNode('h2'),
+                    btn = createNode('button'),
+                    br = createNode('br'),
+                    span = createNode('span');
+                h2.innerText = coffee.product;
+                h2.setAttribute('id', coffee._id);
+                btn.innerText = "Add";
+                btn.setAttribute('class', 'add');
+                span.innerText = (coffee.price + " " + coffee.category + " ");
+                 appendNode(li, h2);
+                 appendNode(li, span);
+                 appendNode(li, br);
+                 appendNode(li, btn);
+                 appendNode(ul, li);
+            })
+        .catch(err => {
+            console.error('Error: ', err);
+        })
+        })
+
+// CONTINUE CODE WITH CHECKOUT TECHNOLOGY
+        
+</script>
+</body>
+</html>
