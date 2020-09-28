@@ -41,27 +41,37 @@
         console.log(elem)
         parent.appendChild(elem);
     };
-    
+
+    var idNo = 0;
+        
     const ul = document.querySelector('.coffee');
     const url = 'https://coffeeproducts.herokuapp.com/api/products';
     fetch(url)
         .then(res => res.json(url))
         .then(data => {
             data.map((coffee) => {
+                console.log(coffee);
                 let li = createNode('li'),
                     h2 = createNode('h2'),
                     btn = createNode('button'),
+                    btn2 = createNode('button'),
                     br = createNode('br'),
+                    spanH = createNode('span');
                     span = createNode('span');
-                h2.innerText = coffee.product;
-                h2.setAttribute('id', coffee._id);
+                spanH.innerText = coffee.product;
+                spanH.id = coffee._id;
+                spanH.setAttribute('class', 'add');
                 btn.innerText = "Add";
                 btn.setAttribute('class', 'add');
-                span.innerText = (coffee.price + " " + coffee.category + " ");
-                 appendNode(li, h2);
+                btn.setAttribute('id', 'add[' + (idNo += 1) + ']');
+                btn2.innerText = "More";
+                btn2.setAttribute('id', 'more[' + (idNo += 1) + ']');
+                span.innerText = ("$" + coffee.price);
+                 appendNode(li, spanH);
                  appendNode(li, span);
                  appendNode(li, br);
                  appendNode(li, btn);
+                 appendNode(li, btn2);
                  appendNode(ul, li);
             })
         .catch(err => {
