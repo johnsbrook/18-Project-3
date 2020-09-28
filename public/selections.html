@@ -45,12 +45,12 @@
     var idNo = 0;
         
     const ul = document.querySelector('.coffee');
-    const url = 'https://coffeeproducts.herokuapp.com/api/products';
+    const url = 'https://coffeeproducts.herokuapp.com/api/products/bagel';
     fetch(url)
         .then(res => res.json(url))
         .then(data => {
             data.map((coffee) => {
-                console.log(coffee);
+                
                 let li = createNode('li'),
                     h2 = createNode('h2'),
                     btn = createNode('button'),
