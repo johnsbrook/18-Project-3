@@ -13,19 +13,26 @@
 <body>
 
     <h1>Selections Page</h1>
+    <h3>Fall Favorites</h3>
+    <ul class="promo"></ul>
+
+    <h3>Coffee</h3>
     <ul class="coffee"></ul>
 
-    <div class="promo"></div>
+    <h3>Tea</h3>
+    <ul class="tea"></ul>
 
-    <div class="tea"></div>
+    <h3>Pastries</h3>
+    <ul class="pastry"></ul>
 
-    <div class="breakfast"></div>
+    <h3>Sandwiches</h3>
+    <ul class="sandwiches"></ul>
+    
+    <h3>Breakfast</h3>
+    <ul class="breakfast"></ul>
 
-    <div class="pastry"></div>
-
-    <div class="sandwiches"></div>
-
-    <div class="sides"></div>
+    <h3>Sides</h3>
+    <ul class="sides"></ul>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
@@ -38,19 +45,20 @@
         
     };
     const appendNode = (parent, elem) => {
-        console.log(elem)
+        // console.log(elem)
         parent.appendChild(elem);
     };
 
     var idNo = 0;
         
-    const ul = document.querySelector('.coffee');
-    const url = 'https://coffeeproducts.herokuapp.com/api/products/bagel';
-    fetch(url)
-        .then(res => res.json(url))
+    // Appending promo items with fetch and map
+    const promo = document.querySelector('.promo');
+    const promou = 'https://coffeeproducts.herokuapp.com/api/products/promo';
+    fetch(promou)
+        .then(res => res.json(promou))
         .then(data => {
             data.map((coffee) => {
-                
+                console.log(coffee);
                 let li = createNode('li'),
                     h2 = createNode('h2'),
                     btn = createNode('button'),
@@ -72,12 +80,82 @@
                  appendNode(li, br);
                  appendNode(li, btn);
                  appendNode(li, btn2);
-                 appendNode(ul, li);
+                 appendNode(promo, li);
             })
         .catch(err => {
             console.error('Error: ', err);
         })
         })
+
+        // Appending coffee using fetch and map
+        const elCoffee = document.querySelector('.coffee');
+        const uCoffee = 'https://coffeeproducts.herokuapp.com/api/products/coffee';
+        fetch(uCoffee)
+            .then(res => res.json(uCoffee))
+            .then(data => {
+                data.map((d) => {
+                    console.log(d);
+                    let liCoffee = createNode('li');
+                       
+                        btnCoffee = createNode('button');
+                        btn2Coffee = createNode('button');
+                        brCoffee = createNode('br'),
+                        spanHCoffee = createNode('span');
+                        spanCoffee = createNode('span');
+                    spanHCoffee.innerText = d.product;
+                    spanHCoffee.id = d._id;
+                    spanHCoffee.setAttribute('class', 'add');
+                    btnCoffee.innerText = "Add", 
+                    btnCoffee.setAttribute('class', 'add');
+                    btn2Coffee.innerText = "More";
+                    spanCoffee.innerText = ("$" + d.price);
+                    appendNode(liCoffee, spanHCoffee);
+                    appendNode(liCoffee, spanCoffee);
+                    appendNode(liCoffee, brCoffee);
+                    appendNode(liCoffee, btnCoffee);
+                    appendNode(liCoffee, btn2Coffee);
+                    appendNode(elCoffee, liCoffee);
+                })
+            .catch(err => {
+                console.error('Error: ', err);
+            })
+        })
+
+        // Appending Tea using fetch and map 
+        const elCoffee = document.querySelector('.coffee');
+        const uCoffee = 'https://coffeeproducts.herokuapp.com/api/products/coffee';
+        fetch(uCoffee)
+            .then(res => res.json(uCoffee))
+            .then(data => {
+                data.map((d) => {
+                    console.log(d);
+                    let liCoffee = createNode('li');
+                       
+                        btnCoffee = createNode('button');
+                        btn2Coffee = createNode('button');
+                        brCoffee = createNode('br'),
+                        spanHCoffee = createNode('span');
+                        spanCoffee = createNode('span');
+                    spanHCoffee.innerText = d.product;
+                    spanHCoffee.id = d._id;
+                    spanHCoffee.setAttribute('class', 'add');
+                    btnCoffee.innerText = "Add", 
+                    btnCoffee.setAttribute('class', 'add');
+                    btn2Coffee.innerText = "More";
+                    spanCoffee.innerText = ("$" + d.price);
+                    appendNode(liCoffee, spanHCoffee);
+                    appendNode(liCoffee, spanCoffee);
+                    appendNode(liCoffee, brCoffee);
+                    appendNode(liCoffee, btnCoffee);
+                    appendNode(liCoffee, btn2Coffee);
+                    appendNode(elCoffee, liCoffee);
+                })
+            .catch(err => {
+                console.error('Error: ', err);
+            })
+        })
+        
+        
 
 // CONTINUE CODE WITH CHECKOUT TECHNOLOGY
         
