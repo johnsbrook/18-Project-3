@@ -35,7 +35,8 @@ fetch(promou)
             btn2.setAttribute('id', 'more[' + (idNo += 1) + ']');
             span.innerText = ("$" + coffee.price);
             br
-            spanDescription.setAttribute(coffee.description)
+            spanDescription.innerText(coffee.description)
+            
              appendNode(li, spanH);
              appendNode(li, span);
              appendNode(li, br);
