@@ -24,6 +24,7 @@ fetch(promou)
                 br = createNode('br'),
                 spanH = createNode('span');
                 span = createNode('span');
+                spanDescription = createNode('span');
             spanH.innerText = coffee.product;
             spanH.id = coffee._id;
             spanH.setAttribute('class', 'add');
@@ -33,6 +34,8 @@ fetch(promou)
             btn2.innerText = "More";
             btn2.setAttribute('id', 'more[' + (idNo += 1) + ']');
             span.innerText = ("$" + coffee.price);
+            br
+            spanDescription.setAttribute(coffee.description)
              appendNode(li, spanH);
              appendNode(li, span);
              appendNode(li, br);
