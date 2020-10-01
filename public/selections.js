@@ -315,14 +315,21 @@ function products() {
 }
 
 // $(document).on('click','.add',function(){alert("this")})
-
+var amount = [];
 document.body.addEventListener("click", function (event) {
   if (event.target.className == "add") {
     console.log(event.target.parentElement.children[1].outerText);
     var item = event.target.parentElement.children[1].outerText
-        item = item.split('$')
+        item = item.split('$');
         console.log(item);
+        amount.push(item[1]);
         $('.item').append(item[0] + '<br>');
-        $('.amount').append(item[1] + '<br>');
+        $('.amount').append('$ ' + item[1] + '<br>');
   }
 });
+console.log(amount);
+var totalAmount = amount.reduce( (a, b) => {
+  return a + b;
+}, 0);
+console.log(totalAmount);
+$('.total').append(totalAmount);
