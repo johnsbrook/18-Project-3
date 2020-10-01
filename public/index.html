@@ -1,55 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="Description" content="Enter your description here"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-<link rel="stylesheet" href="assets/css/style.css">
-<title>Coffee Shop Products Entry Page</title>
-</head>
-<body>
-    <nav class="nav" style="background-color: lightslategray; color: white;">
-        <h1 class="text-center ml-5 my-2">Product Generator</h1>
-    </nav>
-    
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="Description" content="Enter your description here" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Selection</title>
+  </head>
+  <body>
     <div class="container">
-        <div class="row">
-            <div class="col-8 mx-auto pt-4">
-                <h5 class="text-left mb-3">Please, enter the details of the coffee product you would like to create.</h5>
-                <form action="/submit" method="post">
-                    <label for="product">Product Name:</label>
-                    <input type="text" name="product" id="product" placeholder="Enter Product Name" style="width: 250px;">
-                    <label for="price">Price:</label>
-                    <input type="text" name="price" id="price" placeholder="Enter Price:" style="width: 205px;"><br>
-                    <label for="description">Description:</label>
-                    <textarea type="text" name="description" id="description" placeholder="Enter brief description" class="mt-2 ml-4" style="width: 500px;"></textarea><br>
-                    <label for="image">Image URL:</label>
-                    <input type="text" name="image" id="image" placeholder="Enter image's URL" class="mt-2 ml-4 mb-2" style="width: 500px;"></input><br>
-                    <label for="category">Category</label>
-                    <select name="category" id="category" class="ml-5">
-                        <option value="coffee">Coffee</option>
-                        <option value="tea">Tea</option>
-                        <option value="pastry">Pastry</option>
-                        <option value="bagel">Bagels</option>
-                        <option value="breakfast">Breakfast</option>
-                        <option value="sandwiches">Sandwiches</option>
-                        <option value="promo">Promo</option>
-                        <!-- <option value="seasonal">Seasonal</option> -->
-                        <option value="sides">Sides</option>
-                    </select><br>
-                    <button class="submit mt-3" id="submit">Submit Product</button>
-                    <button class="clear mt-3" id="clear">Clear Entry</button>
-                </form>
-            </div>
+      <div class="row">
+        <div class="col-12 col-md-8">
+          <h1 class="clicker">Selections del Giorno</h1>
+          <h3>Fall Favorites</h3>
+          <ul class="promo"></ul>
+
+          <h3>Coffee</h3>
+          <ul class="coffee"></ul>
+
+          <h3>Tea</h3>
+          <ul class="tea"></ul>
+
+          <h3>Pastries</h3>
+          <ul class="pastry"></ul>
+
+          <h3>Sandwiches</h3>
+          <ul class="sandwiches"></ul>
+
+          <h3>Breakfast</h3>
+          <ul class="breakfast"></ul>
+
+          <h3>Sides</h3>
+          <ul class="sides"></ul>
         </div>
+
+        <div class="col-12 col-md-4 pt-5">
+          <div class="row">
+            <div class="col-9 mx-auto">Order Total</div>
+            <div class="col-3" id="total"></div>
+          </div>
+          <div class="row mx-auto">
+            <div class="col-9 item">
+
+            </div>
+            <div class="col-3 amount">
+
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
-<script src="products.js"></script>
-</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./selections.js"></script>
+    <script src="./order.js"></script>
+    <script></script>
+
+    <!-- CONTINUE CODE WITH CHECKOUT TECHNOLOGY -->
+  </body>
 </html>
