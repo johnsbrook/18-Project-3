@@ -18,3 +18,10 @@ button {
 ul {
     list-style: none;
 }
+
+h1, h3 {
+    margin-top: 25px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+    margin-left: 40px;
+}
