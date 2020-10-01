@@ -24,7 +24,7 @@ fetch(promou)
                 br = createNode('br'),
                 spanH = createNode('span');
                 span = createNode('span');
-                spanDescription = createNode('span');
+              
             spanH.innerText = coffee.product;
             spanH.id = coffee._id;
             spanH.setAttribute('class', 'add');
@@ -33,8 +33,7 @@ fetch(promou)
             btn.setAttribute('id', 'add[' + (idNo += 1) + ']');
             btn2.innerText = "More";
             btn2.setAttribute('id', 'more[' + (idNo += 1) + ']');
-            span.innerText = ("$" + coffee.price + " " + coffee.description);
-        
+            span.innerText = ("$" + coffee.price);
             
              appendNode(li, spanH);
              appendNode(li, span);
@@ -63,6 +62,8 @@ fetch(promou)
                     brCoffee = createNode('br'),
                     spanHCoffee = createNode('span');
                     spanCoffee = createNode('span');
+                    spanCoffeeDescription = createNode ('span');
+
                 spanHCoffee.innerText = d.product;
                 spanHCoffee.id = d._id;
                 spanHCoffee.setAttribute('class', 'add');
@@ -70,6 +71,9 @@ fetch(promou)
                 btnCoffee.setAttribute('class', 'add');
                 btn2Coffee.innerText = "More";
                 spanCoffee.innerText = ("$" + d.price);
+                brCoffee;
+                spanCoffeeDescription.innerText = d.description;
+
                 appendNode(liCoffee, spanHCoffee);
                 appendNode(liCoffee, spanCoffee);
                 appendNode(liCoffee, brCoffee);
