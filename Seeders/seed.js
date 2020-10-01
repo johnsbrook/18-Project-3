@@ -11,18 +11,11 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Coffeeshop", {
     {
       product: "Espresso",
       price: 1.99,
-      category: "Coffee"
-    },
-    {
-      product: "Latte",
-      price: 2.99,
-      category: "Coffee"
-    },
-    {
-      product: "Cortado",
-      price: 3.99,
-      category: "Coffee"
+      category: "Coffee",
+      description: "Bold brewed black coffee",
+      image: "http://www.google.com"
     }
+
   ];
   
 db.Coffeeshop.deleteMany({})
