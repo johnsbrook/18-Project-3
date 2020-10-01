@@ -15,41 +15,34 @@ const promou = 'https://coffeeproducts.herokuapp.com/api/products/promo';
 fetch(promou)
     .then(res => res.json(promou))
     .then(data => {
-        data.map((coffee) => {
-            console.log(coffee);
-            let li = createNode('li'),
-                h2 = createNode('h2'),
-                btn = createNode('button'),
-                btn2 = createNode('button'),
+        data.map((d) => {
+            let li = createNode('li');                   
+                btn = createNode('button');
+                btn2 = createNode('button');
                 br = createNode('br'),
-                spanH = createNode('span');
+                spanH = createNode('div');
                 span = createNode('span');
-              
-                spanDescription = createNode('p');
+                p = createNode('div');
                 image = createNode('img')
-                
+                    
 
-            spanH.innerText = d.product;
-            spanH.id = d._id;
-            spanH.setAttribute('class', 'add');
-            span.innerText = ("$" + d.price);
-            spanDescription.innerText = d.description;
-            btn.innerText = "Add", 
-            btn.setAttribute('class', 'add');
-            btn2.innerText = "More";
-            console.log(d.image)
-            image.setAttribute('src', d.image);
-            image.setAttribute('style', 'width: 150px; height: auto; border-radius: 15px;')
+                spanH.innerText = (d.product + " " + " $" + d.price);
+                spanH.id = d._id;
+                spanH.setAttribute('class', 'add');
+                p.innerText = d.description;
+                btn.innerText = "Add", 
+                btn.setAttribute('class', 'add');
+                btn2.innerText = "More";
+                image.setAttribute('src', d.image);
+                image.setAttribute('style', 'width: 150px; height: auto; border-radius: 15px;')
 
-            appendNode(li, spanH);
-            appendNode(li, span);
-            appendNode(li, br);
-            appendNode(li, spanDescription);
-            appendNode(li, image);
-            appendNode(li, br);
-            appendNode(li, btn);
-            appendNode(li, btn2);
-            appendNode(el, li);
+                appendNode(li, image);
+                appendNode(li, spanH);
+                appendNode(li, span);
+                appendNode(li, p);
+                appendNode(li, btn);
+                appendNode(li, btn2);
+                appendNode(promo, li);
         })
     .catch(err => {
         console.error('Error: ', err);
@@ -64,37 +57,33 @@ fetch(promou)
         .then(data => {
             data.map((d) => {
                 console.log(d);
-                let liCoffee = createNode('li');                   
-                    btnCoffee = createNode('button');
-                    btn2Coffee = createNode('button');
-                    brCoffee = createNode('br'),
-                    spanHCoffee = createNode('span');
-                    spanCoffee = createNode('span');
-                    spanCoffeeDescription = createNode('p');
-                    imageCoffee = createNode('img')
+                let li = createNode('li');                   
+                btn = createNode('button');
+                btn2 = createNode('button');
+                br = createNode('br'),
+                spanH = createNode('div');
+                span = createNode('span');
+                p = createNode('div');
+                image = createNode('img')
                     
 
-                spanHCoffee.innerText = d.product;
-                spanHCoffee.id = d._id;
-                spanHCoffee.setAttribute('class', 'add');
-                spanCoffee.innerText = ("$" + d.price);
-                spanCoffeeDescription.innerText = d.description;
-                btnCoffee.innerText = "Add", 
-                btnCoffee.setAttribute('class', 'add');
-                btn2Coffee.innerText = "More";
-                console.log(d.image)
-                imageCoffee.setAttribute('src', d.image);
-                imageCoffee.setAttribute('style', 'width: 150px; height: auto; border-radius: 15px;')
+                spanH.innerText = (d.product + " " + " $" + d.price);
+                spanH.id = d._id;
+                spanH.setAttribute('class', 'add');
+                p.innerText = d.description;
+                btn.innerText = "Add", 
+                btn.setAttribute('class', 'add');
+                btn2.innerText = "More";
+                image.setAttribute('src', d.image);
+                image.setAttribute('style', 'width: 150px; height: auto; border-radius: 15px;')
 
-                appendNode(liCoffee, spanHCoffee);
-                appendNode(liCoffee, spanCoffee);
-                appendNode(liCoffee, brCoffee);
-                appendNode(liCoffee, spanCoffeeDescription);
-                appendNode(liCoffee, imageCoffee);
-                appendNode(liCoffee, brCoffee);
-                appendNode(liCoffee, btnCoffee);
-                appendNode(liCoffee, btn2Coffee);
-                appendNode(elCoffee, liCoffee);
+                appendNode(li, image);
+                appendNode(li, spanH);
+                appendNode(li, span);
+                appendNode(li, p);
+                appendNode(li, btn);
+                appendNode(li, btn2);
+                appendNode(elCoffee, li);
             })
         .catch(err => {
             console.error('Error: ', err);
@@ -109,26 +98,33 @@ fetch(promou)
         .then(data => {
             data.map((d) => {
                 console.log(d);
-                let liTea = createNode('li');
-                   
-                    btnTea = createNode('button');
-                    btn2Tea = createNode('button');
-                    brTea = createNode('br'),
-                    spanHTea = createNode('span');
-                    spanTea = createNode('span');
-                spanHTea.innerText = d.product;
-                spanHTea.id = d._id;
-                spanHTea.setAttribute('class', 'add');
-                btnTea.innerText = "Add", 
-                btnTea.setAttribute('class', 'add');
-                btn2Tea.innerText = "More";
-                spanTea.innerText = ("$" + d.price);
-                appendNode(liTea, spanHTea);
-                appendNode(liTea, spanTea);
-                appendNode(liTea, brTea);
-                appendNode(liTea, btnTea);
-                appendNode(liTea, btn2Tea);
-                appendNode(elTea, liTea);
+                let li = createNode('li');                   
+                btn = createNode('button');
+                btn2 = createNode('button');
+                br = createNode('br'),
+                spanH = createNode('div');
+                span = createNode('span');
+                p = createNode('div');
+                image = createNode('img')
+                    
+
+                spanH.innerText = (d.product + " " + " $" + d.price);
+                spanH.id = d._id;
+                spanH.setAttribute('class', 'add');
+                p.innerText = d.description;
+                btn.innerText = "Add", 
+                btn.setAttribute('class', 'add');
+                btn2.innerText = "More";
+                image.setAttribute('src', d.image);
+                image.setAttribute('style', 'width: 150px; height: auto; border-radius: 15px;')
+
+                appendNode(li, image);
+                appendNode(li, spanH);
+                appendNode(li, span);
+                appendNode(li, p);
+                appendNode(li, btn);
+                appendNode(li, btn2);
+                appendNode(elTea, li);
             })
         .catch(err => {
             console.error('Error: ', err);
