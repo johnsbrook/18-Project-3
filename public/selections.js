@@ -25,22 +25,31 @@ fetch(promou)
                 spanH = createNode('span');
                 span = createNode('span');
               
-            spanH.innerText = coffee.product;
-            spanH.id = coffee._id;
+                spanDescription = createNode('p');
+                image = createNode('img')
+                
+
+            spanH.innerText = d.product;
+            spanH.id = d._id;
             spanH.setAttribute('class', 'add');
-            btn.innerText = "Add";
+            span.innerText = ("$" + d.price);
+            spanDescription.innerText = d.description;
+            btn.innerText = "Add", 
             btn.setAttribute('class', 'add');
-            btn.setAttribute('id', 'add[' + (idNo += 1) + ']');
             btn2.innerText = "More";
-            btn2.setAttribute('id', 'more[' + (idNo += 1) + ']');
-            span.innerText = ("$" + coffee.price);
-            
-             appendNode(li, spanH);
-             appendNode(li, span);
-             appendNode(li, br);
-             appendNode(li, btn);
-             appendNode(li, btn2);
-             appendNode(promo, li);
+            console.log(d.image)
+            image.setAttribute('src', d.image);
+            image.setAttribute('style', 'width: 150px; height: auto; border-radius: 15px;')
+
+            appendNode(li, spanH);
+            appendNode(li, span);
+            appendNode(li, br);
+            appendNode(li, spanDescription);
+            appendNode(li, image);
+            appendNode(li, br);
+            appendNode(li, btn);
+            appendNode(li, btn2);
+            appendNode(el, li);
         })
     .catch(err => {
         console.error('Error: ', err);
@@ -55,27 +64,33 @@ fetch(promou)
         .then(data => {
             data.map((d) => {
                 console.log(d);
-                let liCoffee = createNode('li');
-                   
+                let liCoffee = createNode('li');                   
                     btnCoffee = createNode('button');
                     btn2Coffee = createNode('button');
                     brCoffee = createNode('br'),
                     spanHCoffee = createNode('span');
                     spanCoffee = createNode('span');
-                    spanCoffeeDescription = createNode ('span');
+                    spanCoffeeDescription = createNode('p');
+                    imageCoffee = createNode('img')
+                    
 
                 spanHCoffee.innerText = d.product;
                 spanHCoffee.id = d._id;
                 spanHCoffee.setAttribute('class', 'add');
+                spanCoffee.innerText = ("$" + d.price);
+                spanCoffeeDescription.innerText = d.description;
                 btnCoffee.innerText = "Add", 
                 btnCoffee.setAttribute('class', 'add');
                 btn2Coffee.innerText = "More";
-                spanCoffee.innerText = ("$" + d.price);
-                brCoffee;
-                spanCoffeeDescription.innerText = d.description;
+                console.log(d.image)
+                imageCoffee.setAttribute('src', d.image);
+                imageCoffee.setAttribute('style', 'width: 150px; height: auto; border-radius: 15px;')
 
                 appendNode(liCoffee, spanHCoffee);
                 appendNode(liCoffee, spanCoffee);
+                appendNode(liCoffee, brCoffee);
+                appendNode(liCoffee, spanCoffeeDescription);
+                appendNode(liCoffee, imageCoffee);
                 appendNode(liCoffee, brCoffee);
                 appendNode(liCoffee, btnCoffee);
                 appendNode(liCoffee, btn2Coffee);
