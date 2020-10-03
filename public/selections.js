@@ -313,10 +313,10 @@ function products() {
           console.error("Error: ", err);
         });
     });
-}
+
 
 // Appending breakfast using fetch and map
-const elBagel = document.querySelector(".bagel");
+const elBagel = document.querySelector(".bagels");
 const uBagel = "https://coffeeproducts.herokuapp.com/api/products/bagel";
 fetch(uBagel)
   .then((res) => res.json(uBagel))
@@ -351,7 +351,7 @@ fetch(uBagel)
         appendNode(li, p);
         appendNode(li, btn);
         appendNode(li, btn2);
-        appendNode(elSides, li);
+        appendNode(elBagel, li);
       })
       .catch((err) => {
         console.error("Error: ", err);
