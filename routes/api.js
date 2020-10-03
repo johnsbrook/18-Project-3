@@ -3,17 +3,17 @@ const logger = require("morgan");
 const mongoose = require("mongoose");
 
 
-const db = require("../models/products");
+const db = require("../models/products.js");
 const app = express();
-
+console.log("This is db" + db);
 
 
 app.post("/submit", ({ body }, res) => {
   db.create(body)
     .then(dbUser => {
-        res.redirect('/')
+        res.redirect('/owner.html')
     })
-    
+    .then(console.log("Item has been created"))
     .catch(err => {
       res.json(err);
     });
@@ -124,4 +124,4 @@ app.get('/api/products/tea', function (req, res) {
   })
 })
 
-module.exports = app
+module.exports = app;
