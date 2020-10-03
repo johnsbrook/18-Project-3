@@ -7,6 +7,7 @@ const db = require("../models/products");
 const app = express();
 
 
+
 app.post("/submit", ({ body }, res) => {
   db.create(body)
     .then(dbUser => {
@@ -17,6 +18,8 @@ app.post("/submit", ({ body }, res) => {
       res.json(err);
     });
 });
+
+
 
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html')

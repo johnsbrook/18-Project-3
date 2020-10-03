@@ -25,6 +25,8 @@ function click() {
       var total = sum.toFixed(2);
     
       document.getElementById("total").innerHTML = "$ " + total;
+      
+      console.log(body.amount);
     });
     
     }

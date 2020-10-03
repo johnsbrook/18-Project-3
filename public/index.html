@@ -15,44 +15,45 @@
 <body>
   <div class="container">
     <div class="row">
-      <div class="col-12 col-md-8">
+      <div class="col-12 col-md-6 bg-danger">
         <h1 class="clicker">Selections del Giorno</h1>
         <h3>Fall Favorites</h3>
         <ul class="promo"></ul>
-
+        <!-- HERE GOES YOUR MAP -->
         <h3>Coffee</h3>
         <ul class="coffee"></ul>
-
+        <!-- HERE GOES YOUR MAP -->
         <h3>Tea</h3>
         <ul class="tea"></ul>
-
+        <!-- HERE GOES YOUR MAP -->
         <h3>Pastries</h3>
         <ul class="pastry"></ul>
-
+        <!-- HERE GOES YOUR MAP -->
         <h3>Sandwiches</h3>
         <ul class="sandwiches"></ul>
-
+        <!-- HERE GOES YOUR MAP -->
         <h3>Breakfast</h3>
         <ul class="breakfast"></ul>
-
+        <!-- HERE GOES YOUR MAP -->
         <h3>Sides</h3>
         <ul class="sides"></ul>
+         <!-- HERE GOES YOUR MAP -->
       </div>
 
-      <div class="col-12 col-md-4 pt-5">
 
-        <div class="row mx-auto">
-          <div class="col-9 item">
-          </div>
-          <div class="col-3 amount">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-9 mx-auto">Order Total</div>
-          <div class="col-3" id="total"></div>
-        </div>
+      <div class="col-12 col-md-6 pt-5 bg-info">
+        <h4>Order Cart</h4>
         
-      </div>
+        <form action="/order" method="post" class="bg-danger" style="display: inline-flex; width: 100%;">
+          <label for="product"></label>
+          <div type="text" name="product" id="product" placeholder="Items" class="item col-6"></div>
+          <label for="amount"></label>
+          <div type="text" name="amount" id="amount" placeholder="Amount" class="amount col-2"></div>
+          <div class="col-2">Order Total: <span id="total"></span></div><br><br>
+
+          <button class="order" id="order" style="height: 35px;">Order</button>
+        </form>
+        
     </div>
   </div>
   </div>

@@ -7,11 +7,11 @@ const Schema = mongoose.Schema;
             required: true
         },
         price: {
-            type: Number,
+            type: String,
             required: true
         }
     });
 
-const Order = mongoose.model("Coffeeshop", order);
+const Order = mongoose.model("Orders", order);
 
 module.exports = Order;
