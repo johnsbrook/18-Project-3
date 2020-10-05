@@ -28,6 +28,7 @@ function products() {
           p = createNode("div");
           image = createNode("img");
 
+
           spanH.innerText = d.product + " " + " $" + d.price;
           spanH.id = d._id;
           spanH.setAttribute("class", "add");

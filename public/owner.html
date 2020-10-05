@@ -20,17 +20,18 @@
         <div class="row">
             <div class="col-8 mx-auto pt-4">
                 <h5 class="text-left mb-3">Please, enter the details of the coffee product you would like to create.</h5>
+                <div class="card shadow p-3">
                 <form action="/submit" method="post">
                     <label for="product">Product Name:</label>
-                    <input type="text" name="product" id="product" placeholder="Enter Product Name" style="width: 250px;">
-                    <label for="price">Price:</label>
-                    <input type="text" name="price" id="price" placeholder="Enter Price:" style="width: 205px;"><br>
-                    <label for="description">Description:</label>
-                    <textarea type="text" name="description" id="description" placeholder="Enter brief description" class="mt-2 ml-4" style="width: 500px;"></textarea><br>
-                    <label for="image">Image URL:</label>
-                    <input type="text" name="image" id="image" placeholder="Enter image's URL" class="mt-2 ml-4 mb-2" style="width: 500px;"></input><br>
-                    <label for="category">Category</label>
-                    <select name="category" id="category" class="ml-5">
+                    <input type="text" name="product" id="product" placeholder="Enter Product Name" style="width: 100%;"><br>
+                    <label for="price">Price:</label><br>
+                    <input type="text" name="price" id="price" placeholder="Enter Price:" style="width:100%"><br>
+                    <label for="description">Description:</label><br>
+                    <textarea type="text" name="description" id="description" placeholder="Enter brief description" class="mt-2" style="width:100%; height:100px"></textarea><br>
+                    <label for="image">Image URL:</label><br>
+                    <input type="text" name="image" id="image" placeholder="Enter image's URL" class="my-2" style="width: 100%"></input><br>
+                    <label for="category">Category:</label>
+                    <select name="category" id="category" class="ml-auto" style="width: 50%;">
                         <option value="coffee">Coffee</option>
                         <option value="tea">Tea</option>
                         <option value="pastry">Pastry</option>
@@ -44,6 +45,7 @@
                     <button class="submit mt-3" id="submit">Submit Product</button>
                     
                 </form>
+            </div>
             </div>
         </div>
         <!-- <div class="row">

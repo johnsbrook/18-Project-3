@@ -5,6 +5,7 @@ function click() {
     var amount = [];
     document.body.addEventListener("click", function (event) {
       if (event.target.className == "add") {
+        console.log(event);
         console.log(event.target.parentElement.children[1].outerText);
         var item = event.target.parentElement.children[1].outerText;
         item = item.split("$");
