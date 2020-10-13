@@ -36,16 +36,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Coffeeshop", {
     }
   ]
   
-// db.Coffeeshop.deleteMany({})
-//   .then(() => db.Coffeeshop.collection.insertMany(checkout))
-//   .then(data => {
-//     console.log(data.result.n + " records inserted!");
-//     process.exit(0);
-//   })
-//   .catch(err => {
-//     console.error(err);
-//     process.exit(1);
-//   });
 
   db.Coffeeshop.deleteMany({})
   .then(() => db.Coffeeshop.collection.insertMany(productSeed))
