@@ -6,7 +6,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Coffeeshop", {
   useFindAndModify: false
 });
 
-
   let productSeed = [
     {
       product: "Espresso",
@@ -36,7 +35,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Coffeeshop", {
     }
   ]
   
-
   db.Coffeeshop.deleteMany({})
   .then(() => db.Coffeeshop.collection.insertMany(productSeed))
   .then (d => {
