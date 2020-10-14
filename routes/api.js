@@ -2,11 +2,9 @@ const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 
-
 const db = require("../models/products.js");
 const app = express();
 console.log("This is db" + db);
-
 
 app.post("/submit", ({ body }, res) => {
   db.create(body)
@@ -18,8 +16,6 @@ app.post("/submit", ({ body }, res) => {
       res.json(err);
     });
 });
-
-
 
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html')
