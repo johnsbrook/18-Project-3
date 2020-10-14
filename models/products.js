@@ -23,7 +23,6 @@ const product = new Schema({
         type: String,
         required: true
     }
-
 });
 
 const Coffeeshop = mongoose.model("Coffeeshop", product);
